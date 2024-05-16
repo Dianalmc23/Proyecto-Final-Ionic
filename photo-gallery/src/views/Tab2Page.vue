@@ -29,7 +29,7 @@
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 const { photos, takePhoto } = usePhotoGallery();
 import { camera, trash, close } from 'ionicons/icons';
-import { 
+import {
   IonPage, 
   IonHeader,
   IonFab,
