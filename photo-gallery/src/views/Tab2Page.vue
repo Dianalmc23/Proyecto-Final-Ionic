@@ -5,15 +5,15 @@
         <ion-title>Photo Gallery</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true">
-
-      <ion-grid>
-        <ion-row>
-          <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
-            <ion-img :src="photo.webviewPath"></ion-img>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    <ion-content>
+    <ion-grid>
+    <ion-row>
+      <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
+      <ion-img :src="photo.webviewPath"></ion-img>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-fab> markup  -->
 
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
         <ion-fab-button @click="takePhoto()">
@@ -26,21 +26,23 @@
 </template>
 
 <script setup lang="ts">
-import { usePhotoGallery } from '@/composables/usePhotoGallery';
-const { photos, takePhoto } = usePhotoGallery();
-import { camera, trash, close } from 'ionicons/icons';
 import {
-  IonPage, 
-  IonHeader,
+  IonContent,
+  IonCol,
   IonFab,
   IonFabButton,
-  IonIcon, 
-  IonToolbar, 
-  IonTitle, 
-  IonContent,
   IonGrid,
+  IonPage,
+  IonHeader,
+  IonIcon,
+  IonImg,
   IonRow,
-  IonCol,
-  IonImg, 
-  } from '@ionic/vue';
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
+import { camera } from 'ionicons/icons';
+import { usePhotoGallery} from '@/composables/usePhotoGallery';
+
+const { photos, takePhoto } = usePhotoGallery();
+
 </script>
